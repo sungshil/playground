@@ -1,0 +1,19 @@
+<html>
+<head> <title> Menu </title> </head>
+<body>
+
+<form method="post" action="{% url 'nfwithdb:nfread' %}">
+	{% csrf_token %}
+	<p>
+	<input type="text" name="Name">
+	<input type="text" name="commentsX">
+	<input type="submit" value="Post">
+	</p>
+</form>
+
+{% for p in p_list %}
+	<p> <h2> {{p.name}} </h2> </p>
+	<p> {{p.comment}} </p>
+{% endfor %}
+
+</body>

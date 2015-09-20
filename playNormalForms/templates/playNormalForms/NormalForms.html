@@ -1,0 +1,22 @@
+<html>
+<head> <title> This is a normal form </title> </head>
+<body>
+
+<h1> result </h1>
+<p> PoYo: {{ poyo }}, GetYo: {{ getyo }} </p>
+
+<h2> Post </h2>
+<form action="{% url 'playNormalForms:normalforms' %}" method="post">
+	{% csrf_token %}
+<input type="text" name="PoYo">
+<input type="submit" value="Post it!">
+</form>
+
+<h2> Get </h2>
+<form action="{% url 'playNormalForms:normalforms' %}" method="get">
+<input type="text" name="GetYo">
+<input type="submit" value="Get it!">
+</form>
+
+</body>
+</html>
